@@ -1,0 +1,41 @@
+﻿@model Payment
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4 class="text-center card-header">Payment Section</h4>
+<hr />
+
+
+<div class="container">
+
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label class="control-label">Payment for Sale : @Model.SalesID</label>
+        
+        </div> <div class="row">
+
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Amount</label>
+                    <input asp-for="Amount" class="form-control" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Payment Type</label>
+                    <select class="form-control" asp-for="PaymentType" asp-items="@(new SelectList(ViewBag.Type,"AccessoriesName","AccessoriesName"))"></select>
+                    <span asp-validation-for="PaymentType" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group d-flex justify-content-end">
+            <input type="submit" value="Make Payment" class="btn btn-primary" />
+        </div>
+        <hr />
+    </form>
+
+</div>
+

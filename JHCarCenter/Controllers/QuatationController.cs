@@ -118,7 +118,7 @@ namespace JHCarCenter.Controllers
             _sRepo.Add(s);
             await _sRepo.SaveAsync(s);
 
-            return View(q);
+            return RedirectToAction("Challan", "Sales", new {id = s.SalesID });
         }
 
         public IActionResult Print(int id)
