@@ -9,5 +9,6 @@ namespace JHCarCenter.Repositoty
     public interface IQutationRepository
     {
         Quatation GetQuatationById(int id);
+        IEnumerable<Quatation> GetAll();
     }
 }

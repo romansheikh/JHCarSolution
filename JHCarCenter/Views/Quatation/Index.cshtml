@@ -1,7 +1,32 @@
-﻿
+﻿@model IEnumerable<Quatation>
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="card-header">
+    <h3 class="text-center">Quatations</h3>
+</div>
 
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+        <div class="col-md-4 col-sm-6">
+            <div class="card m-3">
+                <div class="card-header">
+                    <h3>@item.Customer.CustomerName</h3>
+                </div>
+                <div>
+                    <p><b>Vehicle : </b>@item.Vehicle.VehicleName</p>
+                    <p><b>C. C : </b>@item.Vehicle.Cubic_Capacity</p>
+                    <p><b>Price : </b>@item.Vehicle.UnitPrice</p>
+                </div>
+
+                <div class="card-footer text-center">
+                    <a asp-action="Details" asp-route-id="@item.QuatationID" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+
+        </div>
+        }
+    </div>

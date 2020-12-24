@@ -15,6 +15,13 @@ namespace JHCarCenter.Repositoty
         {
             _context = context;
         }
+
+        public IEnumerable<Quatation> GetAll()
+        {
+            List<Quatation> q = _context.Quatations.Include("Customer").Include("Vehicle").ToList();
+            return q;
+        }
+
         public Quatation GetQuatationById(int id)
         {
             Quatation q = _context.Quatations.Include("Customer").Include("Vehicle").FirstOrDefault(x => x.QuatationID == id);

@@ -30,7 +30,7 @@ namespace JHCarCenter.Controllers
         }
         public IActionResult Index()
         {
-            var list = _repo.GetAll();
+            var list = _qRepo.GetAll();
             return View(list);
         }
            public IActionResult Details(int id)
