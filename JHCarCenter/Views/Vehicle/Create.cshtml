@@ -87,7 +87,7 @@
             </div>
             <div class="col">
                 <div class="form-group">
-                    <label class="control-label">Accessories</label>
+                    <label class="control-label">Vehicle Type</label>
                     <select class="form-control" asp-for="VehicleTypeID" asp-items="@(new SelectList(ViewBag.Type,"VehicleTypeID","Type"))"></select>
                     
                     <span asp-validation-for="AccessoriesIds" class="text-danger"></span>
