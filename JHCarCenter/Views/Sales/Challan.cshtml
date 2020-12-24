@@ -31,14 +31,60 @@
     </div>
     <div class="row">
         <div class="col">
-            <h3>Customer Informations</h3>
-            <h5>Customer Name: </h5>
-            <h5>Addrerss: </h5>
-            <h5>Phone: </h5>
-        </div>
-        <div class="col">
+            <p>Customer Informations Customer Name: Addrerss: Phone:</p>
 
         </div>
+    </div>
+    <div class="row">
+        <table class="table table-bordered table-sm mt-4">
+            <thead class="bg-info">
+                <tr>
+                    <th scope="col">Serial Number</th>
+                    <th scope="col">Vehicle Descriptation</th>
+                    <th scope="col">
+                        Unit Price
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">1</td>
+                    <td>Vehicle : </td>
+                    <td rowspan="8"></td>
+                </tr>
+                <tr>
+                    <td scope="row">2</td>
+                    <td>Engine Capacity :</td>
+                </tr>
+                <tr>
+                    <td scope="row">3</td>
+                    <td>Chassis No. :</td>
+                </tr>
+                <tr>
+                    <td scope="row">4</td>
+                    <td>Engine No. : </td>
+                </tr>
+                <tr>
+                    <td scope="row">5</td>
+                    <td>Manf. Year : </td>
+                </tr>
+                <tr>
+                    <td scope="row">6</td>
+                    <td>Load Gapacity : </td>
+                </tr>
+                <tr>
+                    <td scope="row">7</td>
+                    <td>Colour : </td>
+                </tr>
+                <tr>
+                    <td scope="row">8</td>
+                    <td>Accessories</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="form-group d-flex justify-content-end">
+        <a asp-action="PrintQuatation" asp-route-id="" class="btn btn-primary">Confrim Order</a>
     </div>
 
 
