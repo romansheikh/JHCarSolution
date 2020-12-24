@@ -1,4 +1,4 @@
-﻿
+﻿@model Quatation
 @{
     ViewData["Title"] = "Challan";
 }
@@ -22,16 +22,21 @@
     </div>
     <div class="row ">
         <div class="col-8">
-            Challan Number:
+            Challan Number: @Model.QuatationID
         </div>
 
         <div class="col-4">
-            Date :
+            Date :  @Model.QuatationCreateDate
         </div>
-    </div>
+    </div><br />
     <div class="row">
         <div class="col">
-            <p>Customer Informations Customer Name: Addrerss: Phone:</p>
+            <p>
+                <b> Customer Informations</b> <br /> 
+                Customer Name: @Model.Customer.CustomerName <br />
+                Addrerss: @Model.Customer.Address <br />
+                Phone: @Model.Customer.Phone
+            </p>
 
         </div>
     </div>
@@ -39,46 +44,44 @@
         <table class="table table-bordered table-sm mt-4">
             <thead class="bg-info">
                 <tr>
-                    <th scope="col">Serial Number</th>
-                    <th scope="col">Vehicle Descriptation</th>
-                    <th scope="col">
-                        Unit Price
-                    </th>
+                    <th>Serial Number</th>
+                    <th>Vehicle Descriptation</th>
+                    <th>Unit Price</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td scope="row">1</td>
-                    <td>Vehicle : </td>
-                    <td rowspan="8"></td>
+                    <td>Vehicle : @Model.Vehicle.VehicleName </td>
+                    <td rowspan="8">@Model.Vehicle.UnitPrice Tk</td>
                 </tr>
                 <tr>
                     <td scope="row">2</td>
-                    <td>Engine Capacity :</td>
+                    <td>Engine Capacity : @Model.Vehicle.Cubic_Capacity</td>
                 </tr>
                 <tr>
                     <td scope="row">3</td>
-                    <td>Chassis No. :</td>
+                    <td>Chassis No. : @Model.Vehicle.ChassisNo</td>
                 </tr>
                 <tr>
                     <td scope="row">4</td>
-                    <td>Engine No. : </td>
+                    <td>Engine No. : @Model.Vehicle.EngineNo</td>
                 </tr>
                 <tr>
                     <td scope="row">5</td>
-                    <td>Manf. Year : </td>
+                    <td>Manf. Year : @Model.Vehicle.ManfactureYear </td>
                 </tr>
                 <tr>
                     <td scope="row">6</td>
-                    <td>Load Gapacity : </td>
+                    <td>Load Gapacity : @Model.Vehicle.LoadCapacity</td>
                 </tr>
                 <tr>
                     <td scope="row">7</td>
-                    <td>Colour : </td>
+                    <td>Colour : @Model.Vehicle.ColorID</td>
                 </tr>
                 <tr>
                     <td scope="row">8</td>
-                    <td>Accessories</td>
+                    <td>Accessories : </td>
                 </tr>
             </tbody>
         </table>

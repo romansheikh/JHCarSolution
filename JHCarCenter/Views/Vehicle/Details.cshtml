@@ -1,0 +1,54 @@
+﻿@model Vehicle
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+
+    <div class="card col-6 offset-3" style="width: 60%">
+        <div class="card-header">
+            <h3 class="text-center">@Model.VehicleName</h3>
+
+        </div>
+
+        <div>
+            <b>  @Html.DisplayNameFor(model => model.VehicleName) : </b>
+            @Html.DisplayFor(model => model.VehicleName)
+        </div>
+
+        <div>
+            <b>  @Html.DisplayNameFor(model => model.ChassisNo) : </b>
+            @Html.DisplayFor(model => model.ChassisNo)
+        </div>
+        <div>
+            <b>  @Html.DisplayNameFor(model => model.EngineNo) : </b>
+            @Html.DisplayFor(model => model.EngineNo)
+        </div> 
+        <div>
+            <b>  @Html.DisplayNameFor(model => model.Cubic_Capacity) : </b>
+            @Html.DisplayFor(model => model.Cubic_Capacity)
+        </div>    
+        <div>
+            <b>  @Html.DisplayNameFor(model => model.Color) : </b>
+            @Html.DisplayFor(model => model.Color)
+        </div>  
+        <div>
+            <b>  @Html.DisplayNameFor(model => model.UnitPrice) : </b>
+            @Html.DisplayFor(model => model.UnitPrice)
+        </div>
+        <div>
+            <b>  @Html.DisplayNameFor(model => model.ManfactureYear) : </b>
+            @Html.DisplayFor(model => model.ManfactureYear)
+        </div>  
+        <div>
+            <b>  @Html.DisplayNameFor(model => model.VehicleType) : </b>
+            @Html.DisplayFor(model => model.VehicleType)
+        </div>
+        <div class="card-footer text-center">
+            @Html.ActionLink("Back to Page", "Index", "Vehicle", new { @class = "btn btn-primary" })
+
+
+        </div>
+    </div>
+</div>
+

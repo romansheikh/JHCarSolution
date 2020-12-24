@@ -29,6 +29,11 @@ namespace JHCarCenter.Controllers
         {
             var vehicleList = _repo.GetAll();
             return View(vehicleList);
+        } 
+        public IActionResult Details(int id)
+        {
+            var item = _repo.GetById(id);
+            return View(item);
         }
         [HttpGet]
         public IActionResult Create()
@@ -85,6 +90,11 @@ namespace JHCarCenter.Controllers
         [HttpGet]
         public IActionResult Update(int id)
         {
+            List<VehicleType> t = new List<VehicleType>();
+            t.Add(new VehicleType { VehicleTypeID = 0, Type = "Select One" });
+            t.AddRange(_tRepo.GetAll().ToList());
+            ViewBag.Type = t;
+
             var veh = _repo.GetById(id);
             List<Color> g = new List<Color>();
             g.Add(new Color { ColorID = 0, ColorName = "Select One" });

@@ -80,7 +80,7 @@
             <div class="col">
                 <div class="form-group">
                     <label class="control-label">Accessories</label>
-                    @*<select asp-for="AccessoriesIds" asp-items="@(new MultiSelectList(ViewBag.Accessories,"AccessoriesID","AccessoriesName"))"></select>*@
+                   
                     @Html.ListBoxFor(model => model.AccessoriesIds, new MultiSelectList(ViewBag.Accessories, "AccessoriesID", "AccessoriesName"), new { @class = "form-control", multiple = "multiple", id = "AccessoriesIds" })
                     <span asp-validation-for="AccessoriesIds" class="text-danger"></span>
                 </div>
@@ -88,7 +88,7 @@
             <div class="col">
                 <div class="form-group">
                     <label class="control-label">Accessories</label>
-                    <select asp-for="VehicleTypeID" asp-items="@(new SelectList(ViewBag.Type,"VehicleTypeID","Type"))"></select>
+                    <select class="form-control" asp-for="VehicleTypeID" asp-items="@(new SelectList(ViewBag.Type,"VehicleTypeID","Type"))"></select>
                     
                     <span asp-validation-for="AccessoriesIds" class="text-danger"></span>
                 </div>
