@@ -1,14 +1,13 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    font-family: 'PT Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    color: #4f5d6e;
-    position: relative;
-    background: rgb(26, 49, 95);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(26, 49, 95, 1)), color-stop(10%, rgba(26, 49, 95, 1)), color-stop(24%, rgba(29, 108, 141, 1)), color-stop(37%, rgba(41, 136, 151, 1)), color-stop(77%, rgba(39, 45, 100, 1)), color-stop(90%, rgba(26, 49, 95, 1)), color-stop(100%, rgba(26, 49, 95, 1)));
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1a315f', endColorstr='#1a315f', GradientType=0);
+background-image: url(../Images/bc.PNG);
+background-repeat:no-repeat;
+background-position:bottom;
+background-attachment: fixed;
+background-size:cover;
+height:100px;
+
 }
 
 a.navbar-brand {
