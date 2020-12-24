@@ -12,7 +12,7 @@ namespace JHCarCenter.Controllers
         {
             return View();
         } 
-        public IActionResult Challan(id int)
+        public IActionResult Challan(int id)
         {
             return View();
         }
