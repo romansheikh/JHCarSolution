@@ -1,0 +1,32 @@
+﻿
+
+@model IEnumerable<Accessories>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 class="text-center text-uppercase">List of Accessories</h3>
+<table class="table table-bordered table-striped col-md-6 offset-3">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.AccessoriesID)</th>
+            <th>@Html.DisplayNameFor(m => m.AccessoriesName)</th>
+            <th>Action(s)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Accessories ac in Model)
+        {
+            <tr>
+                <td>@ac.AccessoriesID</td>
+                <td>@ac.AccessoriesName</td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = ac.AccessoriesID }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Update",  "Update", new { id = ac.AccessoriesID }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Delete", "Delete", new { id = ac.AccessoriesID }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>  

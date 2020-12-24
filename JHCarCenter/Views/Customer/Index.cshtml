@@ -1,0 +1,62 @@
+﻿@model IEnumerable<JHCarCenter.Models.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+              Customer Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+              Phone
+            </th>
+            <th>
+             National ID Number
+            </th>
+            <th>
+              Driving Licence
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>Action(s)</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrivingLicence)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender.GenderID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CustomerID" class="btn btn-outline-primary">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CustomerID" class="btn btn-outline-success">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CustomerID" class="btn btn-outline-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

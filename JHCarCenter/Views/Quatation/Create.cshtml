@@ -1,0 +1,72 @@
+﻿@model Quatation
+@{
+    ViewData["Title"] = "Create";
+    Customer customer = ViewBag.Customer as Customer;
+    Vehicle vehicle = ViewBag.Vehicle as Vehicle;
+}
+
+<h4 class="text-center card-header">Quatation Primary Data</h4>
+<hr />
+
+
+<div class="container">
+
+    <form asp-action="Create">
+        <kdiv asp-validation-summary="ModelOnly" class="text-danger"></kdiv>
+        <div class="row">
+            <div class="col card-header">
+                <div class="form-group">
+                    <label class="control-label "><b>Customer Name  :</b> @customer.CustomerName</label>  
+                    <input type="hidden" asp-for="CustomerID" value="@customer.CustomerID"/>
+
+                </div> 
+                <div class="form-group">
+                    <label class="control-label"><b>Address :</b> @customer.Address</label> 
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label"><b>Phone Number :</b> @customer.Phone</label>
+                </div>
+            </div>
+            <div class="col card-header">
+                <div class="form-group">
+                    <label class="control-label"><b>Vehicle Name :</b> @vehicle.VehicleName</label>
+                    <input type="hidden" asp-for="VehicleID" value="@vehicle.VehicleID"/>
+                </div>
+                <div class="form-group">
+                          <label class="control-label"><b>Price :</b> @vehicle.UnitPrice</label> 
+                </div>
+                <div class="form-group">
+                          <label class="control-label"><b>C.C :</b> @vehicle.Cubic_Capacity</label> 
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-2 pt-5">
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Delivary Period</label>
+                    <input asp-for="DelivaryPeriod" class="form-control" />
+                    <span asp-validation-for="DelivaryPeriod" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Validity</label>
+                    <input asp-for="ValidityDays" class="form-control" type="number" />
+                    <span asp-validation-for="ValidityDays" class="text-danger"></span>
+                </div>
+            </div>
+
+
+        </div>
+  
+
+
+        <div class="form-group d-flex justify-content-end">
+            <input type="submit" value="Create Quatation" class="btn btn-primary" />
+        </div>
+        <hr />
+    </form>
+
+</div>

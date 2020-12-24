@@ -1,0 +1,66 @@
+﻿@model JHCarCenter.Models.Customer
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h4 class="text-center card-header">Update Customer Data</h4>
+<hr />
+
+
+
+<hr />
+<div class="container">
+
+    <form asp-action="Update">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="CustomerID" />
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Customer Name</label>
+                    <input asp-for="CustomerName" class="form-control" />
+                    <span asp-validation-for="CustomerName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Address</label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Phone Number</label>
+                    <input asp-for="Phone" class="form-control" type="number" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Gender</label>
+                    <select class="form-control" asp-for="GenderID" asp-items="@(new SelectList(ViewBag.Genders,"GenderID","GenderName"))"></select>
+                    <span asp-validation-for="GenderID" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group d-flex justify-content-end">
+            <input type="submit" value="Save Customer Info and Create Quatation ->>" class="btn btn-primary" />
+        </div>
+        <hr />
+    </form>
+
+</div>
+
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

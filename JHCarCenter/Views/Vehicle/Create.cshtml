@@ -1,0 +1,105 @@
+﻿@model VehicleAddVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h4 class="text-center card-header">Vehicle Input Data</h4>
+<hr />
+
+
+<div class="container">
+
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Vehicle Name</label>
+                    <input asp-for="VehicleName" class="form-control" />
+                    <span asp-validation-for="VehicleName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Engine Number</label>
+                    <input asp-for="EngineNo" class="form-control" />
+                    <span asp-validation-for="EngineNo" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Chassis Number</label>
+                    <input asp-for="ChassisNo" class="form-control" />
+                    <span asp-validation-for="ChassisNo" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Color</label>
+                    <select class="form-control" asp-for="ColorID" asp-items="@(new SelectList(ViewBag.Color,"ColorID","ColorName"))"></select>
+                    <span asp-validation-for="ColorID" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Cubic_Capacity(CC)</label>
+                    <input asp-for="Cubic_Capacity" class="form-control" />
+                    <span asp-validation-for="Cubic_Capacity" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Load Capacity</label>
+                    <input asp-for="LoadCapacity" class="form-control" />
+                    <span asp-validation-for="LoadCapacity" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Manfacture Year</label>
+                    <input asp-for="ManfactureYear" class="form-control"/>
+                    <span asp-validation-for="ManfactureYear" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Unit Price</label>
+                    <input asp-for="UnitPrice" class="form-control" type="number" />
+                    <span asp-validation-for="UnitPrice" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Accessories</label>
+                    @*<select asp-for="AccessoriesIds" asp-items="@(new MultiSelectList(ViewBag.Accessories,"AccessoriesID","AccessoriesName"))"></select>*@
+                    @Html.ListBoxFor(model => model.AccessoriesIds, new MultiSelectList(ViewBag.Accessories, "AccessoriesID", "AccessoriesName"), new { @class = "form-control", multiple = "multiple", id = "AccessoriesIds" })
+                    <span asp-validation-for="AccessoriesIds" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Accessories</label>
+                    <select asp-for="VehicleTypeID" asp-items="@(new SelectList(ViewBag.Type,"VehicleTypeID","Type"))"></select>
+                    
+                    <span asp-validation-for="AccessoriesIds" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group d-flex justify-content-end">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+        <hr />
+    </form>
+
+</div>

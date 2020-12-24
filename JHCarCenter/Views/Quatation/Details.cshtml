@@ -1,0 +1,139 @@
+﻿@model Quatation
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3 class="card-header text-center">Quatation</h3>
+<div class="container">
+    <div class="row d-flex justify-content-between">
+        <div class="col-md-8">
+            <h3><b>Customer Details</b></h3>
+        </div>
+        <div class="col-md-4">
+            Date : @Model.QuatationCreateDate.ToShortDateString();
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <label>Customer Name : @Model.Customer.CustomerName</label>
+
+
+        </div>
+        <div class="col-md-4">
+
+            <label>Phone Number : @Model.Customer.Phone</label>
+
+        </div> <br />
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Address : @Model.Customer.Address</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table table-bordered table-sm mt-4">
+            <thead class="bg-info">
+                <tr>
+                    <th scope="col">Serial Number</th>
+                    <th scope="col">Vehicle Descriptation</th>
+                    <th scope="col">
+                        Unit Price
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">1</td>
+                    <td>Vehicle : @Model.Vehicle.VehicleName</td>
+                    <td rowspan="8">@Model.Vehicle.UnitPrice</td>
+                </tr>
+                <tr>
+                    <td scope="row">2</td>
+                    <td>Engine Capacity : @Model.Vehicle.Cubic_Capacity</td>
+                </tr>
+                <tr>
+                    <td scope="row">3</td>
+                    <td>Chassis No. : @Model.Vehicle.ChassisNo</td>
+                </tr>
+                <tr>
+                    <td scope="row">4</td>
+                    <td>Engine No. : @Model.Vehicle.EngineNo</td>
+                </tr>
+                <tr>
+                    <td scope="row">5</td>
+                    <td>Manf. Year : @Model.Vehicle.ManfactureYear</td>
+                </tr>
+                <tr>
+                    <td scope="row">6</td>
+                    <td>Load Gapacity : @Model.Vehicle.LoadCapacity</td>
+                </tr>
+                <tr>
+                    <td scope="row">7</td>
+                    <td>Colour : @Model.Vehicle.ColorID</td>
+                </tr>
+                <tr>
+                    <td scope="row">8</td>
+                    <td>Accessories</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <p>Terms and Conditions</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            Payment :
+        </div>
+        <div class="col-10">
+            100% Payment to be made in cash/Check/Pay Order/D.D. in favour of
+            our account at'the time of delivery.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            Warranty :
+        </div>
+        <div class="col-10">
+            We.shall provide one year after sales service without apare parts.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            Delivery :
+        </div>
+        <div class="col-10">
+            Within <b> @Model.DelivaryPeriod </b> days from the date of your final confirmation.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            Validity :
+        </div>
+        <div class="col-10">
+            Our offer shall remain valid upto <b> @Model.ValidityDays </b> days fro your acceptance from the
+            date of this offer.
+        </div>
+    </div>
+    <div class="form-group d-flex justify-content-end">
+        <a asp-action="PrintQuatation" asp-route-id="@Model.QuatationID" class="btn btn-primary">Print</a>
+        @if (!Model.IsSales)
+        {
+            <a asp-action="Confirm" asp-route-id="@Model.QuatationID" class="btn btn-primary">Confirm</a>
+        }
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

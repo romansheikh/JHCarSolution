@@ -1,0 +1,23 @@
+﻿@model Accessories
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="AccessoriesID" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Accessories Name</label>
+                <input asp-for="AccessoriesName" class="form-control" readonly />
+                <span asp-validation-for="AccessoriesName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

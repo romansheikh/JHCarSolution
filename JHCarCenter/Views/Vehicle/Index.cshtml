@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Vehicle>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Vehicle Name
+                </th>
+                <th>
+                    CC
+                </th>
+                <th>
+                    Color
+                </th>
+                <th>
+                    Load Capacity
+                </th>
+
+                <th>
+                    Manfacture Year
+                </th>
+                <th>
+                    Unit Price
+                </th>
+                <th>Action(s)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VehicleName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cubic_Capacity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Color)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LoadCapacity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ManfactureYear)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UnitPrice)
+                    </td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@item.VehicleID" class="btn btn-outline-primary">Update</a> |
+                        <a asp-action="Details" asp-route-id="@item.VehicleID" class="btn btn-outline-success">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.VehicleID" class="btn btn-outline-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
