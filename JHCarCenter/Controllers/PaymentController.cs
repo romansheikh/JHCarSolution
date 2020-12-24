@@ -20,6 +20,10 @@ namespace JHCarCenter.Controllers
         {
             var list = _repo.GetAll();
             return View(list);
+        } 
+        public IActionResult Create()
+        {
+            return View();
         }
     }
 }
