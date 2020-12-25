@@ -21,26 +21,33 @@
                         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Customer" asp-action="Index">Customer Information</a>
+                        <a class="nav-link" asp-area="" asp-controller="Customer" asp-action="Index">Customer Info</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="Accessories" asp-action="Index"> Accessories List </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Vehicle Information </a>
+                        <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Vehicle Info </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" asp-controller="Vehicle" asp-action="Create"> Add New Vehicle</a></li>
                             <li><a class="dropdown-item" asp-controller="Vehicle" asp-action="Index"> Sahow All Vehicle </a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Quatations Information </a>
+                        <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Quatations Info </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" asp-controller="Quatation" asp-action="Index"> Show All</a></li>
                             <li class="dropdown-divider"></li>
                             <li><a class="dropdown-header"> Add New Quatation</a></li>
                             <li><a class="dropdown-item" asp-controller="Customer" asp-action="Create">New Customer</a></li>
                             <li><a class="dropdown-item" asp-controller="Customer" asp-action="Index">Existing Customer</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Delivary Info</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="Delivery" asp-action="Pending"> Pending Delivaries</a></li>
+                            <li><a class="dropdown-item" asp-controller="Delivery" asp-action="Index"> All </a></li>
                         </ul>
                     </li>
                 </ul>

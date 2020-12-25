@@ -70,6 +70,8 @@ namespace JHCarCenter.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Quatation quatation)
         {
+            Vehicle v = _vehrepo.GetById(quatation.VehicleID);
+            quatation.Price = v.UnitPrice;
             quatation.QuatationCreateDate = DateTime.Now;
             _repo.Add(quatation);
             await _repo.SaveAsync(quatation);
@@ -118,7 +120,7 @@ namespace JHCarCenter.Controllers
             _sRepo.Add(s);
             await _sRepo.SaveAsync(s);
 
-            return RedirectToAction("Challan", "Sales", new {id = s.SalesID });
+            return RedirectToAction("Challan", "Sales", new {id = s.QuatationID });
         }
 
         public IActionResult Print(int id)
